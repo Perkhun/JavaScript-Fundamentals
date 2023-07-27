@@ -38,7 +38,7 @@ console.log(arr); // [2,3,4,5,6,7,8,9]*/
 //2 4
 //2 3 3 4 4 4 
 
-function output(a, b) {
+/*function output(a, b) {
     if(a > b) {
         [a, b] = [b, a];
     }
@@ -48,8 +48,7 @@ function output(a, b) {
         }
     }
 }
-output(6, 9);
-//console.log(output(1, 5));
+output(6, 9);*/
 
 
 //Task 4
