@@ -99,3 +99,23 @@ console.log(triangleArea(1, 2, 3));*/
 
  }
 console.log(greetings(12));*/
+
+
+
+//STUDY EXCEPTIONS 01/08
+/*function enterPIN(num) {
+ 
+  if (num.toString().length > 4) {
+    throw new Error ("Line length greater than 4 characters");
+  }
+  return num;
+}
+try {
+  let result = enterPIN(143444);
+  console.log(result);
+} catch (exception) {
+  console.log(exception.name);
+  console.log(exception.message);
+  console.log(exception.stack);
+}
+*/
