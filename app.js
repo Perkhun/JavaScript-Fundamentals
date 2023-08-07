@@ -119,3 +119,27 @@ try {
   console.log(exception.stack);
 }
 */
+
+
+
+//STUDY 02/08 EXTRA TASK FOR BF
+/*function calculateGuests(guestsInput) {
+  let stringOfNumber = "";
+  for (const symbol of guestsInput) {
+    if (!isNaN(parseInt(symbol))) {
+      stringOfNumber += symbol;
+      //break; //буде тільки перша цифра
+    } else if (stringOfNumber !== "") {
+      break; //буде перше число   //якщо без break, то виведе просто усі цифри
+    }
+  }
+
+  if (stringOfNumber === "" || stringOfNumber === "0") {
+    return "not a number";
+  }
+
+  return parseInt(stringOfNumber);
+}
+
+console.log(calculateGuests("9. or 75"));
+*/

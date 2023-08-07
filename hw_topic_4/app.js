@@ -4,8 +4,6 @@
 Функція повинна генерувати винятки, якщо були введені не числа, і коли одне з чисел або обидва більшого розміруза довжину масиву. 
 Напишіть код, який використовує цю функцію, передбачте обробку можливих винятків.*/
 
-
-
 /*function sumSliceArray(arr, first, second) {
      let i = 0;
     for (arr[i] of arr) {
@@ -36,7 +34,6 @@ try {
 }
 */
 
-
 //Task 2
 /*Створіть функцію checkAge(), яка запитує у користувача його ім'я, вік та статус (адмін, модератор, користувач) 
 та генерує модальне вікно з помилкою, якщо:вік користувача менше 18 або більше 70 років (генерується помилка типу RangeError).
@@ -44,8 +41,6 @@ Kористувач не ввів жодних даних в будь-якому
     Error). У полі статус введено неправильне слово (тип помилки EvalError).в полі вік введено нечислове значення. 
     У всіх інших випадках користувач отримає доступ до перегляду фільму. У блоці catch передбачена можливість виведення назви та 
     опису помилки.*/
-
-
 
 /*function ckeckAge() {
   let name = prompt("What is your name?");
@@ -93,15 +88,11 @@ try {
     alert(exception);
 }*/
 
-
-
 //Task 3
 /*Реалізуйте функцію calcRectangleArea(width, height), яка приймає 2 параметри ширина прямокутника width і висота прямокутника height 
 і обраховує його площу. Передбачити припинення виконання програми і генерацію винятку у випадку, якщо функції передано не числові 
 параметри.
 Напишіть код, який використовує цю функцію та обробляє можливі виняткові ситуації.*/
-
-
 
 /*function calcRectangleArea(width, height) {
   if (typeof width !== "number" || typeof height !== "number") {
@@ -117,8 +108,6 @@ try {
   console.log(exception.message);
 }*/
 
-
-
 //Task 4
 /*Створіть клас MonthException, конструктор якого приймає параметр message і ініціалізує поле name значенням MonthException.
 Реалізуйте функцію showMonthName(month), в якій параметр month – це порядковий номер місяця в році. 
@@ -130,8 +119,6 @@ console.log(showMonthName(5));
 May
 console.log(showMonthName(14));
 MonthException Incorrect month number*/
-
-
 
 /*class MonthException extends Error {
   constructor(message) {
@@ -169,8 +156,6 @@ try {
   console.log(error.name, error.message);
 }*/
 
-
-
 //Task 5
 /*Реалізуйте функцію showUser(id), яка приймає параметром користувацьке id і повертає об’єкт, який містить значення переданої id. 
 Також функція викидає помилку у разі якщо введено від’ємне id.
@@ -183,9 +168,7 @@ showUsers([7, -12, 44, 22]);
 Error: ID must not be negative: -12
 [ {id: 7}, {id: 44}, {id: 22} ]*/
 
-
-
- /*function showUser(id) {
+/*function showUser(id) {
     if(id < 0) {
         throw new Error("You input uccorect id. \n Please input true id");
     }
@@ -213,3 +196,4 @@ Error: ID must not be negative: -12
  } catch (error) {
     console.log(error);
  }*/
+
