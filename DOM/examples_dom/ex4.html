@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Приклад 4</title>
+</head>
+<body>
+  
+  <a href="http://google.com">Посилання 1</a><br>
+  <a href="http://yeandex.ru">Посилання 2</a><br>
+  <a href="http://mail.ru">Посилання 3</a><br>
+
+  <script>
+    /*for (const element of document.body.children) {
+     if(element.matches("a[href$='.ru']")) {
+      element.innerHTML = 'ERROR'
+     }
+    }*/
+    
+    for (const element of document.body.querySelectorAll("a[href$='.ru']")) {
+      element.innerHTML = 'ERROR'
+     }
+    
+
+  </script>
+</body>
+</html>

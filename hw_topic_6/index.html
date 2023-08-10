@@ -1,0 +1,136 @@
+<!-- Task 1 DONE
+На HTML-сторінці є ненумерований список з id="list", який складається із 5 елементів. У модальному вікні необхідно послідовно вивести вміст:
+     1) першого елемента списку
+     2) останнього елемента списку
+     3) другого елемента списку
+     4) четвертого елемента списку
+     5) третього елемента списку 
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="list">
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+    </ul>
+
+    <script>
+      //1, 5, 2, 4, 3
+
+      //RESULT #1
+      let ul = document.body.querySelector("#list");
+      let li = document.body.querySelectorAll("li");
+
+      let result = (ul.innerHTML =
+        li[0].innerHTML +
+        li[4].innerHTML +
+        li[1].innerHTML +
+        li[3].innerHTML +
+        li[2].innerHTML);
+
+      alert(result);
+
+      //RESULT #2
+      /*const list = document.getElementById("list");
+      const listItem = list.getElementsByTagName("li");
+      let child = listItem[2];
+      let result =
+        (list.innerText = `${list.firstElementChild.innerText}, ${list.lastElementChild.innerText}, ${child.previousElementSibling.innerText}, ${child.nextElementSibling.innerText}, ${child.innerText}`);
+      
+        alert(result);*/
+
+    </script>
+  </body>
+</html>  -->
+
+
+<!-- Task 2 DONE
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>I'am a big header!!!</h1>
+    <div id="myDiv">
+      <p>First paragraph</p>
+      <p>Second paragraph</p>
+      <p>Third paragraph</p>
+      <p>Fourth paragraph</p>
+    </div>
+    <ul id="myList">
+      <li>Make</li>
+      <li>me</li>
+      <li>horizontal!</li>
+    </ul>
+    <span>Make me invisible, please!</span>
+
+    <script>
+      document.querySelector("h1").style.backgroundColor = "lightgreen";
+
+      let div = document.querySelectorAll("#myDiv p");
+      div[0].style.fontWeight = "bold";
+      div[1].style.color = "red";
+      div[2].style.textDecoration = "underline";
+      div[3].style.fontStyle = "italic";
+
+      let list = document.body.querySelector("#myList");
+      list.style.listStyle = "none";
+      list.style.display = "flex";
+
+      document.querySelector("span").style.visibility = "hidden";
+    </script>
+  </body>
+</html> -->
+
+
+
+<!--Task 3 DONE
+Напишіть скріпт, який за допомогою засобів DOM створить для порожньої HTML-сторінки таку структуру з тегів і їх атрибутів.
+<body>
+  main class="mainClass check item">         
+     <div id="myDiv">
+         <p>First paragraph</p>           
+     </div>
+ </main> 
+</body> 
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let parentMain = document.createElement("main");
+        parentMain.className = "mainClass check item";
+
+        let childDiv = document.createElement("div");
+        childDiv.id = "myDiv";
+
+        let childP = document.createElement("p");
+        childP.innerText = "First paragraph";
+
+        childDiv.appendChild(childP);
+        parentMain.appendChild(childDiv);
+
+        document.appendChild(parentMain);
+
+    </script>
+</body>
+</html> -->

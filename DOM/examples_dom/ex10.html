@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Приклад 10</title>
+</head>
+<body>
+  
+  <p title="Підказка" class="text">Абзац тексту</p>
+
+  <script>
+    
+    //АТРИБУТИ
+
+    let elem = document.body.querySelector('p');
+
+    console.log(elem.hasAttribute("title"))  //true
+    console.log(elem.getAttribute("title"))  //Підказка
+
+    elem.setAttribute("id", "id")
+
+    for (const i of elem.attributes) {
+      console.log(`${i.name} = ${i.value}`)
+    }
+
+    /*title = Підказка
+      class = text
+      id = id*/
+
+      elem.removeAttribute("title");
+      console.log(elem)  //p class="text" id="id">Абзац тексту</p>
+      console.dir(elem) //можна побачити всі можливі властивості елем
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Приклад 8</title>
+</head>
+<body>
+  
+  <p>Абзац тексу</p>
+  <div>
+    <h3>Заголовок</h3>
+    <p>Текст</p>
+  </div>
+
+  <script>
+    let content = document.body.querySelector('p').textContent = `new text content `
+    console.log(content)
+
+    //textContent = innerText - всередині них не можна писати теги
+    //теги працють тільки у innerHTML = `<P>..`
+  </script>
+</body>
+</html>

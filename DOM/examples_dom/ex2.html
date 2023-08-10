@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Приклад 2</title>
+</head>
+<body>
+  
+  <ul>
+    <li>Пункт 1</li>   <!--New text with grey color-->
+    <li>Пункт 2</li>
+  </ul>
+  <ul>
+    <li>Пункт 3</li>  <!--New text with grey color-->
+    <li>Пункт 4</li>
+  </ul>
+
+  <script>
+    let elements = document.querySelectorAll('ul > li:first-child');
+    for (const element of elements) {
+      element.innerHTML = 'New text';
+      element.style.color = 'grey';
+    }
+  </script>
+</body>
+</html>

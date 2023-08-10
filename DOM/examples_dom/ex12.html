@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/style.css">
+  <title>Приклад 12</title>
+</head>
+<body>
+  <p>Розділювач</p>
+  <hr>
+  <script>
+
+    //СТВОРЕННЯ НОВОГО ТЕГА ТА ДОДАВАННЯ ЙОГО НА СТОРІНКУ
+
+    let div = document.createElement('div')
+    div.className = 'alert'
+
+    let p = document.createElement('p')
+    p.textContent = 'some text'
+
+    div.append(p)
+
+    document.querySelector('hr').before(div)
+
+    //append - end, prepend - beginning, after, before
+    //appendChild - один дочірній vs append - багато дочірніх можна прописати
+
+  </script>
+</body>
+</html>

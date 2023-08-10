@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Приклад 7</title>
+</head>
+<body>
+  
+  <p>Абзац текста</p>
+  <div>Текст в блоке div</div>
+  <h3>Заголовок 3 уровня</h3>
+
+  <script>
+    let str = ["one", "two", "three"]  //document.body.innerHTML - усе з body заміниться
+    document.body.querySelector('p').innerHTML = ` 
+        <ol>
+          <li>${str[0]}</li>
+          <li>${str[1]}</li>
+          <li>${str[2]}</li>
+          </ol>
+    `
+    //innerText - побачимо код у браузері
+    //innerHTML - побачимо результат виконання коду у браузері
+    
+  </script>
+</body>
+</html>

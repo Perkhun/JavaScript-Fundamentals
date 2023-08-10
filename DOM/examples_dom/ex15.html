@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/style.css">
+  <title>Приклад 15</title>
+</head>
+<body>
+
+  <div class="alert">
+    <p>Message</p>
+  </div>
+
+  <script>
+    //CLONING
+    
+    let div = document.querySelector('div')
+
+    let div2 = div.cloneNode(true) 
+    //true - clone with children elem
+    //false - clone without children
+
+    div2.querySelector('p').textContent = 'new text'
+    div.after(div2)
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Приклад 11</title>
+</head>
+<body>
+  
+  <p data-about="Це текст">Абзац тексту</p> 
+  <div data-about-block="Це блок">Блок тексту</div>
+
+  <script>
+
+    //ВЛАСНІ АТРИБУТИ --> через data- +наша назва атрибута
+
+    let elem = document.body.querySelector('p'); //атрибут about
+    console.log(elem.dataset.about) //Це текст
+
+    let elem1 = document.body.querySelector('div');
+    console.log(elem1.dataset.aboutBlock) //Це бдок
+
+  </script>
+</body>
+</html>

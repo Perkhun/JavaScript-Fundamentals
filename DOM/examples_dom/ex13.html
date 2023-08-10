@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/style.css">
+  <title>Приклад 13</title>
+</head>
+<body>
+
+  <ul>
+    <li>Пункт 1</li>
+    <li>Пункт 2</li>
+  </ul>
+  
+
+  <script>
+    //elem.insertAdjacentHTML(where, html) -- таке ж, як приклад 12, тільки можемо вставляти одразу готовий html
+
+    let elem = document.querySelector('ul')
+    elem.insertAdjacentHTML('beforebegin', '<p>beforebegin</p>')
+    elem.insertAdjacentHTML('afterbegin', '<p>afterbegin</p>')
+    elem.insertAdjacentHTML('beforeend', '<p>beforeend</p>')
+    elem.insertAdjacentHTML('afterend', '<p>afterend</p>')
+
+  </script>
+</body>
+</html>
