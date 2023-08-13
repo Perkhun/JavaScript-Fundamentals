@@ -1,0 +1,34 @@
+<!--Task 2 DONE-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id ='text'>I learning JavaScript events!</p> 
+
+<div>
+        <button>Change style!</button>
+        <!-- <button onclick="changeCSS()" >Change style!</button> another variant CLICK in html--> 
+</div>
+
+<script>
+    //напишіть функцію changeCSS(), яка спрацьовуватиме по кліку на кнопку і змінюватиме стиль вмісту тега <p>:
+    // колір шрифту – оранжевий, розмір шрифту 20px, шрифт сімейства "Comic Sans MS".
+
+        function changeCSS() {
+            let p = document.querySelector('#text')
+            p.style.color = 'orange'
+            p.style.fontSiize = '20'
+            p.style.fontFamily = 'Comic Sans MS'
+        }
+
+        let btn = document.querySelector('div button')
+        btn.addEventListener('click', changeCSS)
+
+</script>
+</body>
+</html>

@@ -1,33 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Приклад 17 - Дерево списків</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/style.css">
-  <title>Приклад 17 - Дерево списків</title>
-</head>
-
-<body>
-
-  <script>
-    let data = {
-      "Овочі": {
-        "огірки": 5,
-        "помідори": 3
-      },
-      "Фрукти": {
-        "червоні": {
-          "клубніка": 2,
-          "малина": 4
+  <body>
+    <script>
+      let data = {
+        Овочі: {
+          огірки: 5,
+          помідори: 3,
         },
-        "зелені": {
-          "яблуко": 6,
-          "лайм": 2
-        }
-      }
-    }
+        Фрукти: {
+          червоні: {
+            клубніка: 2,
+            малина: 4,
+          },
+          зелені: {
+            яблуко: 6,
+            лайм: 2,
+          },
+        },
+      };
 
-  </script>
-</body>
+      function createUl(object) {
+        if (!Object.keys(object).length) {
+          return ;
+        }
+        let ul = document.createElement("ul");
+        for (const key in object) {
+          let li = document.createElement("li");
+          if (!isNaN(object[key])) {
+            li.textContent = key + ': ' +object[key];
+          } else li.textContent = key + ':';
+          let childrenUl = createUl(object[key]);
+          if (childrenUl) {
+            li.append(childrenUl);
+          }
+          ul.append(li);
+        }
+        return ul;
+      }
+
+      function showUl(container, object) {
+        document.querySelector(container).append(createUl(object));
+      }
+
+      showUl('body', data);
+
+    </script>
+  </body>
 </html>

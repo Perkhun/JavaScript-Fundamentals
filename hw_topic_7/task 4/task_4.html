@@ -1,0 +1,39 @@
+<!-- Task 4 DONE
+     /*Реалізуйте програму, яка по натисканню на кнопку видалятиме обраний елемент випадаючого списку. 
+        Можуть видалятися всі елементи в будь-якому порядку.*/
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select name="names">
+        <option value="Peter">Peter</option>
+        <option value="John">John</option>
+        <option value="Alise">Alise</option>
+        <option value="Alex">Alex</option>
+        <option value="Iren">Iren</option>
+    </select>
+
+    <button>Choose and delete</button>
+
+    <script>
+       
+        function removeItem(event) {
+            let names = document.querySelector('select')
+            let option = names.selectedIndex;
+
+            if(option >= 0) {
+                names.remove(option);
+            }
+
+        }
+        document.querySelector('button').addEventListener('click', removeItem);
+
+    </script>
+</body>
+</html>

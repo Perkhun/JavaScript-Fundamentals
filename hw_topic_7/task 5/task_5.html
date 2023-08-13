@@ -1,0 +1,39 @@
+<!-- Task 5 DONE
+    /*Реалізуйте програму, яка по натисканню на кнопку виводитиме повідомлення 
+"I was pressed!", при наведенні на кнопку виводитиме повідомлення "Mouse on me!", а при відведенні курсора миші виводитиме повідомлення "Mouse is not on me!".
+Приклад роботи:
+https://user-images.githubusercontent.com/9075641/228462490-a2ec423a-44e3-40f5-9c0a-7e9d207f2822.png
+*/
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button
+      onclick="action('click')"
+      onmouseover="action('mouseover')"
+      onmouseout="action('mouseout')"
+    >
+      Live button!
+    </button>
+
+    <script>
+      function action(event) {
+        if (event === "click") {
+          console.log("I was pressed!");
+          document.body.style.backgroundColor = "lightgreen";
+        } else if (event === "mouseover") {
+          console.log("Mouse on me!");
+          document.body.style.backgroundColor = "pink";
+        } else if (event === "mouseout") {
+          console.log("Mouse is not on me!");
+          document.body.style.backgroundColor = "white";
+        }
+      }
+    </script>
+  </body>
+</html>

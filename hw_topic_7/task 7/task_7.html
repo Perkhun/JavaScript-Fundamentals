@@ -1,0 +1,73 @@
+<!-- Task 7 DONE
+        На сторінці потрібно реалізувати 2 випадаючих списки. У першому містяться назви країн, у другому – назви міст. 
+        Реалізувати роботу таким чином, щоб коли вибирається з лівого випадаючого списку певна країна - в правому випадаючому  
+        списку з'являлися міста цієї країни. Список міст формується динамічно, через JavaScript. Також потрібно нижче вивести 
+        назву обраної країни і місто. -->
+
+        <!DOCTYPE html>
+        <html lang="en">
+          <head>
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <title>Document</title>
+          </head>
+          <body>
+            <select name="country" id="country">
+              <option value="ger">Germany</option>
+              <option value="usa">USA</option>
+              <option value="ukr">Ukraine</option>
+            </select>
+        
+            <select name="cities" id="cities"></select>
+            <p id="finishContent"></p>
+        
+            <script>
+        
+              let countries = document.querySelector("#country");
+              let cities = document.querySelector("#cities");
+              let finishContent = document.querySelector("#finishContent");
+        
+              countries.addEventListener("change", function () {
+                cities.innerHTML = "";
+                finishContent.textContent = "";
+        
+                if (countries.value === "ger") {
+                  let cityOptionBerlin = document.createElement("option");
+                  cityOptionBerlin.textContent = "Berlin";
+        
+                  let cityOptionMunich = document.createElement("option");
+                  cityOptionMunich.textContent = "Munich";
+        
+                  cities.append(cityOptionBerlin, cityOptionMunich);
+                } else if (countries.value === "usa") {
+                  let cityOptionNY = document.createElement("option");
+                  cityOptionNY.textContent = "New York";
+        
+                  let cityOptionBoston = document.createElement("option");
+                  cityOptionBoston.textContent = "Boston";
+        
+                  let cityOptionChicago = document.createElement("option");
+                  cityOptionChicago.textContent = "Chicago";
+        
+                  cities.append(cityOptionNY, cityOptionBoston, cityOptionChicago);
+                } else if (countries.value === "ukr") {
+                  let cityOptionLviv = document.createElement("option");
+                  cityOptionLviv.textContent = "Lviv";
+        
+                  let cityOptionOdesa = document.createElement("option");
+                  cityOptionOdesa.textContent = "Odesa";
+        
+                  cities.append(cityOptionLviv, cityOptionOdesa);
+                }
+        
+                cities.addEventListener("change", function () {
+                  finishContent.textContent = "";
+                  finishContent.textContent = `Вибрана країна: ${
+                    countries.options[countries.selectedIndex].text
+                  } та місто ${cities.options[cities.selectedIndex].text}`;
+                });
+              });
+            </script>
+          </body>
+        </html>
+        
