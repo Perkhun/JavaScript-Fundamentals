@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>header1</h3>
+    <div>text1</div>
+    <h3>header2</h3>
+    <div>text2</div>
+
+    <!-- res:
+         <div>text1</div>
+         <h3>header1</h3>
+         <div>text2</div>
+         <h3>header2</h3>
+    -->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      /* Task 3 DONE 
+      Знайдіть теги <div>, які стоять безпосередньо після <h3> і перемістіть кожен <div>-елемент так, 
+            щоб він став безпосередньо над <h3>.*/
+
+                //JS
+      /*let h3 = document.querySelectorAll("h3");
+
+      h3.forEach(function (h3) {
+        let div = h3.nextElementSibling;
+
+        if (div && div.tagName === "DIV") {
+          h3.parentNode.insertBefore(div, h3);
+        }
+      });*/
+
+
+      //JQuery
+      let h3 = $("h3")
+      h3.each(function () {
+        let div = $(this).next();
+
+        if(div && div.is("div")) {
+           div.insertBefore(this)
+        };
+      });
+
+    </script>
+  </body>
+</html>

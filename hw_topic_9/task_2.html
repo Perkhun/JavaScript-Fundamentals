@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a href="https://google.com">LINK</a>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      /* TASK 2 DONE
+      На HTML-сторінці є посилання <a>. У випадку коли, href починається на https://, 
+            потрібно додати посиланню атрибут target="_blank".*/
+
+      //JS
+      /*let link = document.body.querySelector('a')
+            console.log(link.getAttribute('href'))
+            let reg = /^(https:\/\/)/
+            if(link.getAttribute('href').match(reg)) 
+            {
+                link.setAttribute('target', '_blank')
+            }*/
+
+      //JQuery
+      let link = $("a[href]");
+      let reg = /^(https:\/\/)/;
+      if (link.attr("href").match(reg)) {
+        link.attr("target", "_blank");
+      }
+    </script>
+  </body>
+</html>

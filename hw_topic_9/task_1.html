@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2 class="head">header1</h2>
+    <h2 class="head">header2 <span class="inner">inner elem1</span></h2>
+    <h2>header3</h2>
+    <h2 class="head">header4<span>inner elem2</span></h2>
+    <h2>header5</h2>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      /* TASK 1 DONE
+      Для заданої сторінки знайдіть всі <h2> з класом head, зробіть для них зелений колір фону, 
+            потім серед знайдених елементів знайдіть елементи з класом inner і поставте їм розмір шрифту 35px.*/
+        
+      //JS
+      /*let color = document.body.querySelectorAll(".head");
+      let inner = document.body.querySelectorAll(".inner");
+      color.forEach(function (el) {
+        el.style.backgroundColor = "green";
+        if (inner.length > 0) {
+          inner.forEach(function (elem) {
+            elem.style.fontSize = "35px";
+          });
+        }
+      });*/
+
+      //JQuery
+      let color = $(".head");
+      let inner = $(".inner");
+
+      color.each(function () {
+        $(this).css("background-color", "green");
+
+        if (inner.length > 0) {
+          $(this).css("font-size", "35px");
+        }
+      });
+    </script>
+  </body>
+</html>

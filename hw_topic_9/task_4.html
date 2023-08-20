@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="checkbox" name="" id="" />
+    <input type="checkbox" name="" id="" />
+    <input type="checkbox" name="" id="" />
+    <input type="checkbox" name="" id="" />
+    <input type="checkbox" name="" id="" />
+    <input type="checkbox" name="" id="" />
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      /* Task 4 DONE
+       На HTML-сторінці є 6 чекбоксів. Напишіть скріпт, який після того, як користувач позначив будь-які 3 чекбокси,
+         всі чекбокси робить неактивними.*/
+
+      /*let inputs = document.querySelectorAll("input");
+
+      inputs.forEach((el) => {
+        el.addEventListener("click", function () {
+          const checkedInputs = document.querySelectorAll("input:checked");
+          if (checkedInputs.length >= 3) {
+            inputs.forEach((elem) => {
+              elem.disabled = true;
+            });
+          }
+        });
+      });*/
+
+
+      //JQuery
+      let inputs = $("input");
+
+      inputs.each((el) => {
+        $(this).on("click", function () {
+          let checkedInputs = $("input:checked");
+          if (checkedInputs.length >= 3) {
+            inputs.attr("disabled", "true");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
