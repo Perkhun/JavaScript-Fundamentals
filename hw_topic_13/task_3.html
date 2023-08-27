@@ -1,0 +1,59 @@
+<!-- Task 3 DONE
+Використати сервіс 
+https://randomuser.me/
+Та при кожному завантаженні сторінки робити запит до API та рендерити базову інформацію про користувача (аватар, ім`я, вік, стать, країна, логін, 
+пароль, пошта).-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random User Info</title>
+  </head>
+  <body>
+    <div id="user-info">
+      <img id="avatar" src="" alt="Avatar" />
+      <p>Name: <span id="name"></span></p>
+      <p>Age: <span id="age"></span></p>
+      <p>Gender: <span id="gender"></span></p>
+      <p>Country: <span id="country"></span></p>
+      <p>Login: <span id="login"></span></p>
+      <p>Password: <span id="password"></span></p>
+      <p>Email: <span id="email"></span></p>
+    </div>
+
+    <script>
+      const userInfo = document.getElementById("user-info");
+      const avatar = document.getElementById("avatar");
+      const nameSpan = document.getElementById("name");
+      const ageSpan = document.getElementById("age");
+      const genderSpan = document.getElementById("gender");
+      const countrySpan = document.getElementById("country");
+      const loginSpan = document.getElementById("login");
+      const passwordSpan = document.getElementById("password");
+      const emailSpan = document.getElementById("email");
+
+      async function fetchRandomUser() {
+        try {
+          const response = await fetch("https://randomuser.me/api/");
+          const data = await response.json();
+          const user = data.results[0];
+
+          avatar.src = user.picture.large;
+          nameSpan.textContent = `${user.name.first} ${user.name.last}`;
+          ageSpan.textContent = user.dob.age;
+          genderSpan.textContent = user.gender;
+          countrySpan.textContent = user.location.country;
+          loginSpan.textContent = user.login.username;
+          passwordSpan.textContent = user.login.password;
+          emailSpan.textContent = user.email;
+        } catch (error) {
+          console.error("Error fetching data:", error);
+        }
+      }
+
+      fetchRandomUser();
+    </script>
+  </body>
+</html>

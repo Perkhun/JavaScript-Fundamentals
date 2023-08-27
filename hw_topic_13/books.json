@@ -1,0 +1,28 @@
+[
+    {
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "publishedYear": 1960
+    },
+    {
+      "title": "1984",
+      "author": "George Orwell",
+      "publishedYear": 1949
+    },
+    {
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "publishedYear": 1925
+    },
+    {
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "publishedYear": 1813
+    },
+    {
+      "title": "The Lord of the Rings",
+      "author": "J.R.R. Tolkien",
+      "publishedYear": 1954
+    }
+  ]
+  

@@ -1,0 +1,36 @@
+<!-- TASK 1 DONE
+  На основі AJAX технології напишіть клієнтську частину аплікації (HTML+JavaScript), в якій при натисненні на кнопку надсилається 
+  асинхронний GET-запит на сервер, сервер обробляє запит і надсилає його на HTML-сторінку оновлюючи вміст кнопки так як показано в прикладі.-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <button onclick="vote()">Vote!</button>
+    <script>
+      function vote() {
+        // Create a new object XMLHttpRequest
+        const ajaxRequest = new XMLHttpRequest();
+        ajaxRequest.open("GET", '', true); // asynchronous requests
+
+        ajaxRequest.onreadystatechange = function () {
+           // If the server response code is not 200, then this is an error
+          if (ajaxRequest.status != 200) {
+            // handle error
+            alert(
+              "Error " + ajaxRequest.status + ": " + ajaxRequest.statusText
+            );
+          } else {
+            // display the result
+            const button = document.querySelector("button")
+            button.innerText = `Your vote is accepted: ${Date()}`
+          }
+        };
+        // 4. Sending request
+        ajaxRequest.send();
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!-- Task 2 DONE
+На основі AJAX технології напишіть клієнтську частину аплікації (HTML+JavaScript), в якій при натисненні на кнопку надсилається асинхронний 
+GET-запит на сервер, завантажується файл books.json і з нього виводяться всі назви авторів у вигляді списку на HTML-сторінку.-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="clickAuthors()">Download books!</button>
+    <ul class="ul"></ul>
+    <script>
+      function clickAuthors() {
+        const ajaxRequest = new XMLHttpRequest();
+        ajaxRequest.open("GET", "books.json", true);
+        const books = "books.json";
+
+        ajaxRequest.onreadystatechange = function () {
+          if (ajaxRequest.readyState === 4 && ajaxRequest.status === 200) {
+            const ul = document.querySelector("ul");
+            const books = JSON.parse(ajaxRequest.responseText);
+            books.forEach((book) => {
+              const li = document.createElement("li");
+              li.textContent = book.author;
+              ul.append(li);
+            });
+          }
+        };
+
+        ajaxRequest.send();
+      }
+    </script>
+  </body>
+</html>
